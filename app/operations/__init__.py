@@ -1,57 +1,76 @@
 
-def addition(a: float, b: float) -> float:
+class Operations():
+    
     """
-    Adds two numbers together.
+    A collection of basic arithmetic operations.
 
-    Args:
-        a: The first number.
-        b: The second number.
+    All methods are static and operate on two floats,
+    returning a float result.
 
-    Returns:
-        The sum of a and b.
+    Methods:
+        addition(a, b): Returns the sum of a and b.
+        subtraction(a, b): Returns the difference of a and b.
+        multiplication(a, b): Returns the product of a and b.
+        division(a, b): Returns the quotient of a and b.
     """
-    return a + b
 
-def subtraction(a: float, b: float) -> float:
-    """
-    Subtracts b from a.
+    @staticmethod
+    def addition(a: float, b: float) -> float:
+        """
+        Adds two numbers together.
 
-    Args:
-        a: The number to subtract from.
-        b: The number to subtract.
+        Args:
+            a: The first number.
+            b: The second number.
 
-    Returns:
-        The difference of a and b.
-    """
-    return a - b
+        Returns:
+            The sum of a and b.
+        """
+        return a + b
 
-def multiplication(a: float, b: float) -> float:
-    """
-    Multiplies two numbers together.
+    @staticmethod
+    def subtraction(a: float, b: float) -> float:
+        """
+        Subtracts b from a.
 
-    Args:
-        a: The first number.
-        b: The second number.
+        Args:
+            a: The number to subtract from.
+            b: The number to subtract.
 
-    Returns:
-        The product of a and b.
-    """
-    return a * b
+        Returns:
+            The difference of a and b.
+        """
+        return a - b
 
-def division(a: float, b: float) -> float:
-    """
-    Divides a by b.
+    @staticmethod
+    def multiplication(a: float, b: float) -> float:
+        """
+        Multiplies two numbers together.
 
-    Args:
-        a: The dividend.
-        b: The divisor.
+        Args:
+            a: The first number.
+            b: The second number.
 
-    Returns:
-        The quotient of a and b.
+        Returns:
+            The product of a and b.
+        """
+        return a * b
 
-    Raises:
-        ZeroDivisionError: If b is zero.
-    """
-    if b == 0:
-        raise ZeroDivisionError("Error: b cannot be 0.")
-    return a / b
+    @staticmethod
+    def division(a: float, b: float) -> float:
+        """
+        Divides a by b.
+
+        Args:
+            a: The dividend.
+            b: The divisor.
+
+        Returns:
+            The quotient of a and b.
+
+        Raises:
+            ZeroDivisionError: If b is zero.
+        """
+        if b == 0:
+            raise ZeroDivisionError("Error: b cannot be 0.")
+        return a / b
