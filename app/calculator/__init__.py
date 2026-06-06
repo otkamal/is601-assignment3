@@ -56,4 +56,3 @@ def calculator() -> None:
             continue
 
         print(f"Result: {result}")
-        
