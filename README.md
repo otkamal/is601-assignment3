@@ -1,30 +1,30 @@
-# Module 2 - Basic Calculator REPL
+# Module 3 - Calculator REPL with OOP Refactor
 
-A simple command-line calculator REPL built in Python.
+A command-line calculator REPL built in Python, refactored to use an `Operations` class with static methods and parameterized tests.
 
-## Features
+## What Changed in Module 3
 
-- Addition, subtraction, multiplication, and division
-- Interactive REPL loop
-- Input validation and error handling
+- Arithmetic logic moved into an `Operations` class (`app/operations/`)
+- Calculator REPL updated to call `Operations` static methods
+- Tests refactored to use `pytest.mark.parametrize`
 
 ## Project Structure
 
 ```
-mod2_assignment/
+mod3_assignment/
 ├── .github/
 │   └── workflows
 │       └── tests.yml
 ├── app/
 │   ├── __init__.py
-│   └── operations
-│       └── __init__.py
-│   └── calculator
+│   ├── calculator/
+│   │   └── __init__.py
+│   └── operations/
 │       └── __init__.py
 ├── tests/
 │   ├── __init__.py
+│   ├── test_calculator.py
 │   └── test_operations.py
-│   └── test_calculator.py
 ├── main.py
 ├── .coveragerc
 ├── .gitignore
@@ -35,14 +35,9 @@ mod2_assignment/
 
 ## Setup
 
-It is recommended to configure a virtual environment before installing dependencies.
-
 ```bash
-# optionally configure a virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
-
-# install dependencies
 pip install -r requirements.txt
 ```
 
@@ -54,21 +49,21 @@ python main.py
 
 ```
 Welcome to the calculator REPL. Type 'exit' to quit.
-Enter an operation (add, subtract, multiply, divide) and two numbers, or 'exit' to quit: add 5 3
-Result: 8.0
+Enter an operation (add, subtract, multiply, divide) and two numbers, or 'exit' to quit: multiply 6 7
+Result: 42.0
 Enter an operation (add, subtract, multiply, divide) and two numbers, or 'exit' to quit: exit
 Exiting calculator... Goodbye ~
 ```
 
 ## Supported Operations
 
-| Operation  | Example          |
-|------------|------------------|
-| add        | `add 5 3`        |
-| subtract   | `subtract 10 4`  |
-| multiply   | `multiply 3 4`   |
-| divide     | `divide 10 2`    |
-| exit       | `quit application` |
+| Operation  | Example              |
+|------------|----------------------|
+| add        | `add 5 3`            |
+| subtract   | `subtract 10 4`      |
+| multiply   | `multiply 3 4`       |
+| divide     | `divide 10 2`        |
+| exit       | quit the application |
 
 ## Running Tests
 
